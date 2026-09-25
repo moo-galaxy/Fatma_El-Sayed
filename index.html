@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fatma El-Sayed | Data Analysis • Graphic Design • Basketball</title>
+<title>Fatma El-Sayed — Student, Designer, #30</title>
 
 <!-- ===== SEO ===== -->
-<meta name="description" content="Meet Fatma El-Sayed, a high-school student passionate about data analysis, graphic design, creativity, and basketball.">
-<meta name="keywords" content="Fatma El-Sayed, high school student portfolio, data analysis, graphic design, basketball, jersey 30, student portfolio, data enthusiast, creative student">
+<meta name="description" content="Fatma El-Sayed — high school student into data, design, and basketball. Jersey #30. This is where all of it lives.">
+<meta name="keywords" content="Fatma El-Sayed, student portfolio, data analysis, graphic design, basketball, jersey 30, Cairo">
 <meta name="author" content="Fatma El-Sayed">
 <meta name="theme-color" content="#0d0e11">
 
-<!-- ===== Open Graph / Social ===== -->
+<!-- ===== Open Graph ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fatma El-Sayed | Data Analysis • Graphic Design • Basketball">
-<meta property="og:description" content="High-school student, data enthusiast, graphic designer, and basketball player passionate about learning, creating, and pushing beyond limits.">
-<meta property="og:image" content="images/fatma-profile.jpg">
-<meta property="og:url" content="https://example.com">
+<meta property="og:title" content="Fatma El-Sayed — Student, Designer, #30">
+<meta property="og:description" content="Numbers. Colors. Court. That's basically my whole personality.">
+<meta property="og:image" content="img.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fatma El-Sayed | Data Analysis • Graphic Design • Basketball">
-<meta name="twitter:description" content="High-school student, data enthusiast, graphic designer, and basketball player.">
-<meta name="twitter:image" content="images/fatma-profile.jpg">
+<meta name="twitter:title" content="Fatma El-Sayed — Student, Designer, #30">
+<meta name="twitter:description" content="Numbers. Colors. Court.">
+<meta name="twitter:image" content="img.jpg">
 
 <!-- ===== Fonts ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +31,6 @@
    1. DESIGN TOKENS
    ========================================================= */
 :root{
-  /* Colors — change these to re-theme the whole site */
   --bg:            #0d0e11;
   --bg-alt:        #111319;
   --surface:       #171a20;
@@ -47,7 +45,6 @@
   --orange-soft:   #ff8f4d;
   --orange-glow:   rgba(255,106,43,.28);
 
-  /* Shape & motion */
   --radius-sm: 14px;
   --radius:    22px;
   --radius-lg: 30px;
@@ -55,11 +52,9 @@
   --shadow-sm: 0 10px 30px rgba(0,0,0,.30);
   --ease:      cubic-bezier(.2,.75,.25,1);
 
-  /* Layout */
   --nav-h: 72px;
   --container: 1200px;
 
-  /* Type */
   --font-head: 'Space Grotesk', 'Poppins', system-ui, sans-serif;
   --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -104,7 +99,6 @@ h1,h2,h3,h4{
 
 ::selection{ background:var(--orange); color:#12141a; }
 
-/* Focus visibility for keyboard users */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -114,7 +108,6 @@ textarea:focus-visible{
   border-radius:6px;
 }
 
-/* Skip link */
 .skip-link{
   position:absolute; left:-9999px; top:0; z-index:999;
   background:var(--orange); color:#12141a;
@@ -122,7 +115,6 @@ textarea:focus-visible{
 }
 .skip-link:focus{ left:0; }
 
-/* Scroll offset for anchor targets */
 section[id]{ scroll-margin-top:90px; }
 
 /* =========================================================
@@ -324,7 +316,6 @@ section[id]{ scroll-margin-top:90px; }
   background:var(--orange);
 }
 
-/* Hamburger */
 .nav-toggle{
   display:none;
   width:44px; height:44px;
@@ -460,7 +451,6 @@ section[id]{ scroll-margin-top:90px; }
   color:var(--muted);
 }
 
-/* --- Hero visual card --- */
 .hero-visual{ display:flex; justify-content:center; }
 
 .visual-card{
@@ -566,10 +556,11 @@ section[id]{ scroll-margin-top:90px; }
   object-fit:cover;
   object-position:center;
 }
+
 .photo-fallback{
   position:absolute;
   inset:0;
-  display:flex;
+  display:none;
   flex-direction:column;
   align-items:center;
   justify-content:center;
@@ -580,6 +571,7 @@ section[id]{ scroll-margin-top:90px; }
     radial-gradient(circle at 50% 28%,rgba(255,106,43,.16),transparent 68%),
     #191c23;
 }
+.photo-frame.img-failed .photo-fallback{ display:flex; }
 .photo-fallback .initials{
   font-family:var(--font-head);
   font-weight:700;
@@ -593,7 +585,6 @@ section[id]{ scroll-margin-top:90px; }
   color:var(--muted-soft);
 }
 
-/* Images that fail to load are hidden so fallbacks show cleanly */
 img.is-missing{ display:none !important; }
 
 /* =========================================================
@@ -651,7 +642,6 @@ img.is-missing{ display:none !important; }
 }
 .about-list span{ font-size:.85rem; color:var(--muted); }
 
-/* Profile card — glassmorphism */
 .profile-card{
   position:relative;
   padding:30px;
@@ -857,6 +847,7 @@ img.is-missing{ display:none !important; }
   border-radius:50%;
   border:1px solid rgba(255,255,255,.06);
   pointer-events:none;
+  z-index:1;
 }
 .jersey-card .jc-circle--2{
   width:118%;
@@ -869,10 +860,42 @@ img.is-missing{ display:none !important; }
   height:1px;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);
   pointer-events:none;
+  z-index:1;
 }
+
+.court-photo{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  border-radius:inherit;
+}
+.court-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  opacity:.28;
+  filter:grayscale(35%) contrast(1.05);
+  transition:transform 1.2s var(--ease), opacity .5s ease;
+}
+.jersey-card:hover .court-photo img{
+  transform:scale(1.06);
+  opacity:.35;
+}
+.court-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(13,14,17,.35) 0%, rgba(13,14,17,.85) 75%),
+    linear-gradient(160deg, rgba(255,106,43,.10), rgba(13,14,17,.6));
+  pointer-events:none;
+}
+.court-photo img.is-missing{ display:none; }
 
 .jersey-label{
   position:relative;
+  z-index:1;
   font-size:.72rem;
   font-weight:600;
   letter-spacing:.28em;
@@ -881,6 +904,7 @@ img.is-missing{ display:none !important; }
 }
 .jersey-number{
   position:relative;
+  z-index:1;
   font-family:var(--font-head);
   font-weight:700;
   font-size:clamp(96px,26vw,180px);
@@ -893,6 +917,7 @@ img.is-missing{ display:none !important; }
 }
 .jersey-name{
   position:relative;
+  z-index:1;
   font-family:var(--font-head);
   font-weight:600;
   font-size:clamp(.95rem,2.6vw,1.15rem);
@@ -902,6 +927,7 @@ img.is-missing{ display:none !important; }
 }
 .jersey-ball{
   position:relative;
+  z-index:1;
   margin-top:14px;
   color:rgba(255,255,255,.28);
 }
@@ -950,7 +976,10 @@ img.is-missing{ display:none !important; }
   letter-spacing:.02em;
   color:var(--white);
 }
-.stat-card:first-child .stat-value{ color:var(--orange); font-size:clamp(1.6rem,5vw,2.1rem); }
+.stat-card:first-child .stat-value{
+  color:var(--orange);
+  font-size:clamp(1.8rem,5.5vw,2.4rem);
+}
 .stat-label{
   font-size:.74rem;
   font-weight:500;
@@ -996,6 +1025,8 @@ img.is-missing{ display:none !important; }
   margin-top:10px;
   font-size:.88rem;
   color:var(--muted);
+  font-style:italic;
+  line-height:1.6;
   flex:1;
 }
 
@@ -1068,12 +1099,13 @@ img.is-missing{ display:none !important; }
 .thumb-fallback{
   position:absolute;
   inset:0;
-  display:grid;
+  display:none;
   place-items:center;
   background:
     radial-gradient(circle at 50% 30%,rgba(255,106,43,.14),transparent 66%),
     linear-gradient(150deg,#232833,#171a20);
 }
+.thumb.img-failed .thumb-fallback{ display:grid; }
 .thumb-fallback span{
   font-family:var(--font-head);
   font-size:.78rem;
@@ -1265,6 +1297,8 @@ img.is-missing{ display:none !important; }
 }
 
 .contact-form{
+  display:flex;
+  flex-direction:column;
   padding:clamp(24px,4vw,34px);
   border-radius:var(--radius-lg);
   background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
@@ -1482,6 +1516,8 @@ img.is-missing{ display:none !important; }
     flex-direction:column;
     align-items:flex-start;
   }
+
+  .reveal{ transform:translateY(20px); }
 }
 
 @media (max-width:420px){
@@ -1511,7 +1547,6 @@ img.is-missing{ display:none !important; }
   .hero h1{ font-size:2.1rem; }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
   *,*::before,*::after{
@@ -1521,28 +1556,6 @@ img.is-missing{ display:none !important; }
   }
   .reveal{ opacity:1; transform:none; }
 }
-.photo-fallback{
-  position:absolute;
-  inset:0;
-  display:none;              /* مخفي افتراضياً */
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  text-align:center;
-  padding:16px;
-  background:
-    radial-gradient(circle at 50% 28%,rgba(255,106,43,.16),transparent 68%),
-    #191c23;
-}
-
-/* يظهر فقط لما الصورة تفشل */
-.photo-frame.img-failed .photo-fallback{
-  display:flex;
-}
-
-/* اخفي الصورة نفسها لو فشلت */
-img.is-missing{ display:none !important; }
 </style>
 </head>
 
@@ -1565,8 +1578,9 @@ img.is-missing{ display:none !important; }
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#basketball">Basketball</a>
-      <a href="#design">Design</a>
       <a href="#data">Data</a>
+      <a href="#design">Design</a>
+      <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -1589,32 +1603,32 @@ img.is-missing{ display:none !important; }
     <div class="container hero-grid">
 
       <div class="hero-copy">
-        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span> High School Student • Jersey #30</p>
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span> Cairo • Jersey #30 • Still figuring it out</p>
 
         <h1 class="reveal d1">Fatma <span class="last">El-Sayed</span></h1>
 
         <p class="hero-headline reveal d2">
-          Data<span class="sep">.</span> Design<span class="sep">.</span> Discipline<span class="sep">.</span>
+          Numbers<span class="sep">.</span> Colors<span class="sep">.</span> Court<span class="sep">.</span>
         </p>
 
         <p class="hero-lead reveal d3">
-          High-school student, data enthusiast, graphic designer, and basketball player
-          passionate about learning, creating, and pushing beyond limits.
+          I'm 16, I spend way too much time on spreadsheets nobody asked for,
+          I redesign things in my head while walking down the street,
+          and I shoot hoops every chance I get. This is where all of that lives.
         </p>
 
         <div class="hero-cta reveal d3">
-          <a href="#about" class="btn btn-primary">Explore My Journey</a>
-          <a href="#design" class="btn btn-ghost">View My Work</a>
+          <a href="#about" class="btn btn-primary">Start Here</a>
+          <a href="#design" class="btn btn-ghost">See My Work</a>
         </div>
 
         <div class="hero-tags reveal d4">
-          <span>Data Analysis</span>
-          <span>Graphic Design</span>
+          <span>Data</span>
+          <span>Design</span>
           <span>Basketball</span>
         </div>
       </div>
 
-      <!-- Visual area: replace the image file to show a real photo -->
       <div class="hero-visual reveal d2">
         <div class="visual-card">
 
@@ -1631,15 +1645,13 @@ img.is-missing{ display:none !important; }
             <span class="dot" aria-hidden="true"></span> Jersey #30
           </span>
 
-         <div class="photo-frame">
-  <img src="img.jpg"
-       alt="Portrait of Fatma El-Sayed"
-       data-fallback>
-  <div class="photo-fallback" aria-hidden="true">
-    <span class="initials">FE</span>
-    <span class="hint">images/fatma-profile.jpg</span>
-  </div>
-</div>
+          <div class="photo-frame">
+            <img src="img.jpg" alt="Fatma El-Sayed" data-fallback>
+            <div class="photo-fallback" aria-hidden="true">
+              <span class="initials">FE</span>
+              <span class="hint">ضع صورتك هنا: img.jpg</span>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -1654,18 +1666,20 @@ img.is-missing{ display:none !important; }
     <div class="container about-grid">
 
       <div class="about-copy reveal">
-        <span class="section-kicker">About</span>
-        <h2 class="section-title">More Than One Passion</h2>
+        <span class="section-kicker">About Me</span>
+        <h2 class="section-title">Three Things I Can't Sit Still Without</h2>
 
         <p>
-          I'm Fatma El-Sayed, a high-school student who enjoys living at the intersection of
-          three very different worlds: numbers, visuals, and the basketball court. Each one
-          teaches me something the others can't.
+          Honestly? I didn't plan any of this. I just started noticing that whenever
+          a teacher handed out a table of numbers, I'd get weirdly excited to poke
+          around and see what was hiding inside it. And whenever I saw a poster
+          that looked off, I couldn't stop thinking about how I'd fix it.
         </p>
         <p>
-          Data analysis trains me to think in a structured, logical way. Graphic design gives me
-          space to be creative and communicate ideas visually. Basketball keeps me disciplined,
-          grounded, and reminds me that progress comes from consistent work — not from shortcuts.
+          Then there's basketball — the part of my day where I stop overthinking
+          everything and just move. It taught me more about patience than any
+          lecture ever did. Missing ten shots in a row and still going for the
+          eleventh? That's basically the whole skill of getting good at anything.
         </p>
 
         <ul class="about-list">
@@ -1678,8 +1692,8 @@ img.is-missing{ display:none !important; }
               </svg>
             </span>
             <span>
-              <strong>Data Analysis</strong>
-              <span>Learning to find patterns and meaning inside raw information.</span>
+              <strong>Data</strong>
+              <span>I like the moment a boring spreadsheet suddenly starts telling a story.</span>
             </span>
           </li>
           <li>
@@ -1689,8 +1703,8 @@ img.is-missing{ display:none !important; }
               </svg>
             </span>
             <span>
-              <strong>Graphic Design</strong>
-              <span>Turning ideas into clean, purposeful visual communication.</span>
+              <strong>Design</strong>
+              <span>Spacing, color, and fonts — I'll spend an hour on 2 pixels and be happy about it.</span>
             </span>
           </li>
           <li>
@@ -1702,7 +1716,7 @@ img.is-missing{ display:none !important; }
             </span>
             <span>
               <strong>Basketball</strong>
-              <span>Building teamwork, focus, and confidence — one session at a time.</span>
+              <span>The place where my head finally goes quiet. Number 30, usually the loudest on the court.</span>
             </span>
           </li>
         </ul>
@@ -1713,20 +1727,20 @@ img.is-missing{ display:none !important; }
           <div class="profile-avatar" aria-hidden="true">FE</div>
           <div>
             <h3>Fatma El-Sayed</h3>
-            <p>High School Student</p>
+            <p>Student • Designer • Baller</p>
           </div>
         </div>
 
         <ul class="profile-roles">
-          <li><span class="dot" aria-hidden="true"></span> Data Analysis Enthusiast</li>
-          <li><span class="dot" aria-hidden="true"></span> Graphic Designer</li>
-          <li><span class="dot" aria-hidden="true"></span> Basketball Player — #30</li>
+          <li><span class="dot" aria-hidden="true"></span> Currently learning: data analysis</li>
+          <li><span class="dot" aria-hidden="true"></span> Currently designing: whatever I can</li>
+          <li><span class="dot" aria-hidden="true"></span> Currently wearing: jersey #30</li>
         </ul>
 
         <div class="profile-footer">
-          <span>Data</span>
-          <span>Design</span>
-          <span>Basketball</span>
+          <span>Est. 2008</span>
+          <span>Cairo</span>
+          <span>Still learning</span>
         </div>
       </aside>
 
@@ -1740,10 +1754,10 @@ img.is-missing{ display:none !important; }
     <div class="container">
 
       <div class="section-head center reveal">
-        <span class="section-kicker">Skills</span>
-        <h2 class="section-title">What I'm Building</h2>
+        <span class="section-kicker">What I Do</span>
+        <h2 class="section-title">Things I'm Actually Good At (and things I'm getting better at)</h2>
         <p class="section-sub">
-          I'm still learning every day. These are the areas I practise, study, and enjoy the most.
+          No fake "expert level" bars here. Just an honest list of what I spend my time on.
         </p>
       </div>
 
@@ -1759,14 +1773,15 @@ img.is-missing{ display:none !important; }
           </div>
           <h3>Data Analysis</h3>
           <p class="skill-desc">
-            Learning how to take messy information and turn it into something clear and useful.
+            Cleaning up messy datasets, spotting patterns, and trying to figure out
+            what the numbers are actually trying to say.
           </p>
           <ul class="chips">
-            <li>Data Cleaning</li>
-            <li>Data Visualization</li>
-            <li>Data Interpretation</li>
-            <li>Analytical Thinking</li>
-            <li>Excel / Spreadsheets</li>
+            <li>Cleaning Data</li>
+            <li>Charts &amp; Graphs</li>
+            <li>Spotting Patterns</li>
+            <li>Excel</li>
+            <li>Asking Better Questions</li>
           </ul>
         </article>
 
@@ -1778,14 +1793,15 @@ img.is-missing{ display:none !important; }
           </div>
           <h3>Graphic Design</h3>
           <p class="skill-desc">
-            Creating visuals that feel balanced, intentional, and easy to understand.
+            Making things that look clean and actually make sense. Social posts,
+            posters, small brand stuff — I'll try my hand at any of it.
           </p>
           <ul class="chips">
-            <li>Visual Design</li>
-            <li>Social Media Design</li>
+            <li>Layout</li>
+            <li>Social Media Posts</li>
             <li>Typography</li>
-            <li>Color Theory</li>
-            <li>Creative Thinking</li>
+            <li>Color</li>
+            <li>Not Overdoing It</li>
           </ul>
         </article>
 
@@ -1798,17 +1814,17 @@ img.is-missing{ display:none !important; }
               <path d="M18 20c0-2 0-3.6-1.2-4.8"/>
             </svg>
           </div>
-          <h3>Personal Skills</h3>
+          <h3>The Human Stuff</h3>
           <p class="skill-desc">
-            The habits and mindsets I keep developing — on the court, in class, and in every project.
+            The things that don't fit in a textbook — showing up, being on time,
+            and not making everything about me.
           </p>
           <ul class="chips">
             <li>Teamwork</li>
-            <li>Discipline</li>
-            <li>Creativity</li>
-            <li>Communication</li>
-            <li>Problem Solving</li>
-            <li>Time Management</li>
+            <li>Showing Up</li>
+            <li>Staying Curious</li>
+            <li>Listening</li>
+            <li>Not Giving Up</li>
           </ul>
         </article>
 
@@ -1822,25 +1838,31 @@ img.is-missing{ display:none !important; }
   <section class="section basketball" id="basketball">
     <div class="container">
 
-      <div class="section-head center reveal">
+      <div class="section-head reveal">
         <span class="section-kicker">Basketball</span>
-        <h2 class="section-title">Built for the Game</h2>
+        <h2 class="section-title">Jersey Number 30</h2>
         <p class="section-sub">
-          Basketball is where I learned that discipline beats motivation. I play with jersey number 30,
-          and every training session teaches me something about focus, teamwork, and staying calm under pressure.
+          I picked this number because of a player I used to watch when I was little.
+          I'm not going to pretend it's a lucky number — I just like how it looks on my back.
         </p>
       </div>
 
       <div class="bball-grid">
 
         <div class="jersey-card reveal" role="img" aria-label="Jersey number 30 — Fatma El-Sayed">
+
+          <div class="court-photo" aria-hidden="true">
+            <img src="1.jpg" alt="" data-fallback loading="lazy">
+            <div class="court-overlay"></div>
+          </div>
+
           <span class="jc-circle" aria-hidden="true"></span>
           <span class="jc-circle jc-circle--2" aria-hidden="true"></span>
           <span class="jc-line" aria-hidden="true"></span>
 
-          <span class="jersey-label">Jersey Number</span>
+          <span class="jersey-label">Fatma El-Sayed</span>
           <span class="jersey-number">30</span>
-          <span class="jersey-name">El-Sayed</span>
+          <span class="jersey-name">Cairo</span>
 
           <span class="jersey-ball" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
@@ -1852,22 +1874,22 @@ img.is-missing{ display:none !important; }
         </div>
 
         <div class="bball-stats">
-          <article class="stat-card reveal d1">
+          <div class="stat-card reveal">
             <span class="stat-value">#30</span>
             <span class="stat-label">Jersey Number</span>
-          </article>
-          <article class="stat-card reveal d2">
-            <span class="stat-value">Team Player</span>
-            <span class="stat-label">Teamwork</span>
-          </article>
-          <article class="stat-card reveal d3">
-            <span class="stat-value">Discipline</span>
-            <span class="stat-label">Training Mindset</span>
-          </article>
-          <article class="stat-card reveal d4">
-            <span class="stat-value">Passion</span>
-            <span class="stat-label">Love for the Game</span>
-          </article>
+          </div>
+          <div class="stat-card reveal d1">
+            <span class="stat-value">Point Guard</span>
+            <span class="stat-label">Position</span>
+          </div>
+          <div class="stat-card reveal d2">
+            <span class="stat-value">3× / week</span>
+            <span class="stat-label">Practice</span>
+          </div>
+          <div class="stat-card reveal d3">
+            <span class="stat-value">Keep going</span>
+            <span class="stat-label">Motto</span>
+          </div>
         </div>
 
       </div>
@@ -1875,18 +1897,19 @@ img.is-missing{ display:none !important; }
   </section>
 
   <!-- =========================================================
-       DATA ANALYSIS
+       DATA
        ========================================================= -->
   <section class="section section--alt" id="data">
     <div class="container">
 
       <div class="section-head reveal">
-        <span class="section-kicker">Data Analysis</span>
-        <h2 class="section-title">Turning Data Into Insight</h2>
+        <span class="section-kicker">Data</span>
+        <h2 class="section-title">Boring Numbers, Interesting Stories</h2>
         <p class="section-sub">
-          I'm currently learning data analysis and really enjoy the moment when a messy spreadsheet
-          finally starts to make sense. I like exploring datasets, spotting patterns, and figuring out
-          what the numbers are actually saying.
+          I got into data kind of by accident. I was helping organize a school
+          event and ended up with a spreadsheet that was a total mess. By the
+          time I was done with it, I realized I actually enjoyed the whole thing.
+          Still figuring it out, but I like where it's going.
         </p>
       </div>
 
@@ -1899,8 +1922,8 @@ img.is-missing{ display:none !important; }
               <path d="M8 16l3.5-4.5L15 14l4-6"/>
             </svg>
           </div>
-          <h3>Data Visualization</h3>
-          <p>Exploring how data can be transformed into clear and meaningful visual stories.</p>
+          <h3>Turning Tables Into Charts</h3>
+          <p>I try to make charts that a person could understand in three seconds. No clutter.</p>
           <div class="mini-chart" aria-hidden="true">
             <span style="--h:42%;--d:.05s"></span>
             <span style="--h:66%;--d:.12s"></span>
@@ -1908,7 +1931,7 @@ img.is-missing{ display:none !important; }
             <span style="--h:86%;--d:.26s"></span>
             <span style="--h:72%;--d:.33s"></span>
           </div>
-          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+          <a href="#contact" class="btn btn-outline btn-sm">Ask me about it</a>
         </article>
 
         <article class="data-card reveal d1">
@@ -1917,8 +1940,8 @@ img.is-missing{ display:none !important; }
               <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>
             </svg>
           </div>
-          <h3>Data Exploration</h3>
-          <p>Learning how to explore datasets, identify patterns, and understand information.</p>
+          <h3>Digging Around</h3>
+          <p>I like opening a dataset I know nothing about and seeing what I find. Sometimes nothing. That's fine too.</p>
           <div class="mini-chart" aria-hidden="true">
             <span style="--h:58%;--d:.05s"></span>
             <span style="--h:34%;--d:.12s"></span>
@@ -1926,7 +1949,7 @@ img.is-missing{ display:none !important; }
             <span style="--h:46%;--d:.26s"></span>
             <span style="--h:64%;--d:.33s"></span>
           </div>
-          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+          <a href="#contact" class="btn btn-outline btn-sm">Ask me about it</a>
         </article>
 
         <article class="data-card reveal d2">
@@ -1936,8 +1959,8 @@ img.is-missing{ display:none !important; }
               <path d="M9.5 20h5"/>
             </svg>
           </div>
-          <h3>Analytical Thinking</h3>
-          <p>Using structured thinking to break down problems and find meaningful insights.</p>
+          <h3>Thinking It Through</h3>
+          <p>The habit I actually want to keep: ask "why" three times before jumping to a conclusion.</p>
           <div class="mini-chart" aria-hidden="true">
             <span style="--h:30%;--d:.05s"></span>
             <span style="--h:52%;--d:.12s"></span>
@@ -1945,7 +1968,7 @@ img.is-missing{ display:none !important; }
             <span style="--h:60%;--d:.26s"></span>
             <span style="--h:92%;--d:.33s"></span>
           </div>
-          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+          <a href="#contact" class="btn btn-outline btn-sm">Ask me about it</a>
         </article>
 
       </div>
@@ -1953,17 +1976,17 @@ img.is-missing{ display:none !important; }
   </section>
 
   <!-- =========================================================
-       GRAPHIC DESIGN
+       DESIGN
        ========================================================= -->
   <section class="section" id="design">
     <div class="container">
 
       <div class="section-head reveal">
-        <span class="section-kicker">Graphic Design</span>
-        <h2 class="section-title">Design With Purpose</h2>
+        <span class="section-kicker">Design</span>
+        <h2 class="section-title">Stuff I Made (and stuff I'm still fixing)</h2>
         <p class="section-sub">
-          A selection of design work and personal experiments. Every piece is a chance to practise
-          layout, color, and typography — and to make an idea easier to feel.
+          These are personal projects and small experiments. Nothing fancy —
+          just things I made because I wanted to see if I could.
         </p>
       </div>
 
@@ -1971,49 +1994,49 @@ img.is-missing{ display:none !important; }
 
         <article class="design-card reveal">
           <div class="thumb">
-            <img src="images/design-1.jpg" alt="Social media design project placeholder by Fatma El-Sayed" loading="lazy" data-fallback>
+            <img src="images/design-1.jpg" alt="Social media design series by Fatma El-Sayed" loading="lazy" data-fallback>
             <div class="thumb-fallback" aria-hidden="true"><span>Design 01</span></div>
-            <span class="thumb-tag">Social Media Design</span>
+            <span class="thumb-tag">Social Media</span>
           </div>
           <div class="design-info">
-            <h3>Social Media Post Series</h3>
-            <p>A set of clean, scroll-stopping posts exploring layout, hierarchy, and consistency.</p>
+            <h3>A Week of Posts</h3>
+            <p>I challenged myself to make one post a day for a week. Some were great, some were not. I learned more from the bad ones.</p>
           </div>
         </article>
 
         <article class="design-card reveal d1">
           <div class="thumb">
-            <img src="images/design-2.jpg" alt="Visual identity design project placeholder by Fatma El-Sayed" loading="lazy" data-fallback>
+            <img src="images/design-2.jpg" alt="Brand identity study by Fatma El-Sayed" loading="lazy" data-fallback>
             <div class="thumb-fallback" aria-hidden="true"><span>Design 02</span></div>
-            <span class="thumb-tag">Visual Identity</span>
+            <span class="thumb-tag">Identity</span>
           </div>
           <div class="design-info">
-            <h3>Brand Identity Study</h3>
-            <p>Exploring how color, type, and simple shapes can build a small visual system.</p>
+            <h3>Fake Brand Practice</h3>
+            <p>I invented a coffee shop, gave it a name, and built a whole tiny brand around it. Just for fun.</p>
           </div>
         </article>
 
         <article class="design-card reveal d2">
           <div class="thumb">
-            <img src="images/design-3.jpg" alt="Poster design project placeholder by Fatma El-Sayed" loading="lazy" data-fallback>
+            <img src="images/design-3.jpg" alt="Poster concept by Fatma El-Sayed" loading="lazy" data-fallback>
             <div class="thumb-fallback" aria-hidden="true"><span>Design 03</span></div>
-            <span class="thumb-tag">Poster Design</span>
+            <span class="thumb-tag">Poster</span>
           </div>
           <div class="design-info">
-            <h3>Event Poster Concept</h3>
-            <p>Bold typography and composition built around one clear, single message.</p>
+            <h3>School Event Poster</h3>
+            <p>My first real brief. I redid it about six times before I was happy with it. Worth it.</p>
           </div>
         </article>
 
         <article class="design-card reveal d3">
           <div class="thumb">
-            <img src="images/design-4.jpg" alt="Creative design experiment placeholder by Fatma El-Sayed" loading="lazy" data-fallback>
+            <img src="images/design-4.jpg" alt="Creative design experiment by Fatma El-Sayed" loading="lazy" data-fallback>
             <div class="thumb-fallback" aria-hidden="true"><span>Design 04</span></div>
-            <span class="thumb-tag">Creative Design</span>
+            <span class="thumb-tag">Experiment</span>
           </div>
           <div class="design-info">
-            <h3>Creative Exploration</h3>
-            <p>Personal experiments with color, shapes, and visual rhythm — just for fun.</p>
+            <h3>Colors I Liked This Month</h3>
+            <p>An excuse to play with palettes. No client, no deadline, just me and the color wheel.</p>
           </div>
         </article>
 
@@ -2028,11 +2051,9 @@ img.is-missing{ display:none !important; }
     <div class="container">
 
       <div class="section-head reveal">
-        <span class="section-kicker">Journey</span>
-        <h2 class="section-title">My Journey</h2>
-        <p class="section-sub">
-          A few stops on the path so far — and I'm only getting started.
-        </p>
+        <span class="section-kicker">The Road So Far</span>
+        <h2 class="section-title">A Short Timeline</h2>
+        <p class="section-sub">Not a resume. Just the moments that actually changed something.</p>
       </div>
 
       <ol class="timeline">
@@ -2040,32 +2061,32 @@ img.is-missing{ display:none !important; }
         <li class="timeline-item reveal">
           <span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-card">
-            <h3>High School</h3>
-            <p>Building a strong academic foundation while exploring creative and analytical interests.</p>
+            <h3>School</h3>
+            <p>Doing the school thing. Some subjects I love, some I just survive. That's normal, right?</p>
           </div>
         </li>
 
         <li class="timeline-item reveal d1">
           <span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-card">
-            <h3>Discovering Data</h3>
-            <p>Started learning the fundamentals of data analysis and data visualization.</p>
+            <h3>Found Data</h3>
+            <p>Opened my first real spreadsheet. Got frustrated. Then got curious. Then got hooked.</p>
           </div>
         </li>
 
         <li class="timeline-item reveal d2">
           <span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-card">
-            <h3>Exploring Design</h3>
-            <p>Developing creative skills through graphic design and visual communication.</p>
+            <h3>Found Design</h3>
+            <p>Started making things for myself. Showed my friends. They said "wait, you made this?" That felt good.</p>
           </div>
         </li>
 
         <li class="timeline-item reveal d3">
           <span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-card">
-            <h3>Basketball</h3>
-            <p>Developing discipline, teamwork, and confidence through basketball.</p>
+            <h3>Found Basketball</h3>
+            <p>Started playing seriously. It keeps me sane. I don't know how else to explain it.</p>
           </div>
         </li>
 
@@ -2080,35 +2101,34 @@ img.is-missing{ display:none !important; }
     <div class="container">
 
       <div class="section-head center reveal">
-        <span class="section-kicker">Values</span>
-        <h2 class="section-title">What I Stand For</h2>
-        <p class="section-sub">Four ideas that guide how I learn, create, and compete.</p>
+        <span class="section-kicker">What Matters</span>
+        <h2 class="section-title">Four Things I Keep Coming Back To</h2>
       </div>
 
       <div class="values-grid">
 
         <article class="value-card reveal">
           <span class="value-num" aria-hidden="true">01</span>
-          <h3>Learn</h3>
-          <p>Always curious and willing to learn.</p>
+          <h3>Stay Curious</h3>
+          <p>If I don't understand something, that's a reason to dig in — not to walk away.</p>
         </article>
 
         <article class="value-card reveal d1">
           <span class="value-num" aria-hidden="true">02</span>
-          <h3>Create</h3>
-          <p>Turning ideas into visual experiences.</p>
+          <h3>Make It Clear</h3>
+          <p>A design or a chart that confuses people isn't finished yet.</p>
         </article>
 
         <article class="value-card reveal d2">
           <span class="value-num" aria-hidden="true">03</span>
-          <h3>Compete</h3>
-          <p>Embracing challenges and improving through basketball.</p>
+          <h3>Show Up</h3>
+          <p>Half the game is just being there, ready, on time. The other half is trying.</p>
         </article>
 
         <article class="value-card reveal d3">
           <span class="value-num" aria-hidden="true">04</span>
-          <h3>Grow</h3>
-          <p>Building skills step by step.</p>
+          <h3>Keep Going</h3>
+          <p>Nothing good happened quickly. I'm playing the long game.</p>
         </article>
 
       </div>
@@ -2122,15 +2142,16 @@ img.is-missing{ display:none !important; }
     <div class="container contact-grid">
 
       <div class="contact-info reveal">
-        <span class="section-kicker">Contact</span>
-        <h2 class="section-title">Let's Connect</h2>
+        <span class="section-kicker">Say Hi</span>
+        <h2 class="section-title">Let's Talk</h2>
         <p class="section-sub">
-          Whether it's about design, data, basketball, or a new opportunity, I'd love to connect.
+          Got a question, a project idea, or just want to say hi? I read everything.
+          I'm slow at replying during exam season though — fair warning.
         </p>
 
         <div class="contact-links">
 
-          <a class="contact-link" href="mailto:your-email@example.com">
+          <a class="contact-link" href="mailto:fatmaelsaud08@gmail.com">
             <span class="ci" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/>
@@ -2155,7 +2176,7 @@ img.is-missing{ display:none !important; }
             </span>
           </a>
 
-          <a class="contact-link" href="https://www.linkedin.com/in/fatma-elsayed-1bb5842bb?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+          <a class="contact-link" href="https://www.linkedin.com/in/fatma-elsayed-1bb5842bb" target="_blank" rel="noopener noreferrer">
             <span class="ci" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="4"/>
@@ -2165,7 +2186,7 @@ img.is-missing{ display:none !important; }
             </span>
             <span>
               <strong>LinkedIn</strong>
-              <em>linkedin.com/in/Fatma Elsayed</em>
+              <em>Fatma El-Sayed</em>
             </span>
           </a>
 
@@ -2193,18 +2214,17 @@ img.is-missing{ display:none !important; }
       </div>
 
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#basketball">Basketball</a>
-        <a href="#design">Design</a>
         <a href="#data">Data</a>
+        <a href="#design">Design</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Fatma El-Sayed. All rights reserved.</p>
+      <p class="footer-copy">© 2026 Fatma El-Sayed. Made with too much coffee and a lot of patience.</p>
       <a class="to-top" href="#home">Back to top ↑</a>
     </div>
 
@@ -2258,23 +2278,20 @@ img.is-missing{ display:none !important; }
     }
   });
 
-  // Close the menu when a link is clicked
   Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function (link) {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close on Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeMenu(); }
   });
 
-  // Close when resizing back to desktop
   window.addEventListener('resize', function () {
     if (window.innerWidth > 900) { closeMenu(); }
   });
 
   /* ---------------------------------------------------------
-     3. SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+     3. SCROLL REVEAL ANIMATIONS
      --------------------------------------------------------- */
   var revealItems = document.querySelectorAll('.reveal');
 
@@ -2295,44 +2312,42 @@ img.is-missing{ display:none !important; }
       revealObserver.observe(el);
     });
   } else {
-    // Fallback for very old browsers
     Array.prototype.forEach.call(revealItems, function (el) {
       el.classList.add('in');
     });
   }
 
   /* ---------------------------------------------------------
-   4. IMAGE FALLBACKS
-   --------------------------------------------------------- */
-Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), function (img) {
+     4. IMAGE FALLBACKS
+     --------------------------------------------------------- */
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), function (img) {
 
-  function showFallback() {
-    img.classList.add('is-missing');
-    var frame = img.closest('.photo-frame') || img.closest('.thumb');
-    if (frame) frame.classList.add('img-failed');
-  }
-
-  function hideFallback() {
-    img.classList.remove('is-missing');
-    var frame = img.closest('.photo-frame') || img.closest('.thumb');
-    if (frame) frame.classList.remove('img-failed');
-  }
-
-  img.addEventListener('error', showFallback);
-  img.addEventListener('load', hideFallback);
-
-  // لو الصورة خلصت قبل ما الـ JS يشتغل
-  if (img.complete) {
-    if (img.naturalWidth === 0) {
-      showFallback();
-    } else {
-      hideFallback();
+    function showFallback() {
+      img.classList.add('is-missing');
+      var frame = img.closest('.photo-frame') || img.closest('.thumb');
+      if (frame) frame.classList.add('img-failed');
     }
-  }
-});
+
+    function hideFallback() {
+      img.classList.remove('is-missing');
+      var frame = img.closest('.photo-frame') || img.closest('.thumb');
+      if (frame) frame.classList.remove('img-failed');
+    }
+
+    img.addEventListener('error', showFallback);
+    img.addEventListener('load', hideFallback);
+
+    if (img.complete) {
+      if (img.naturalWidth === 0) {
+        showFallback();
+      } else {
+        hideFallback();
+      }
+    }
+  });
 
   /* ---------------------------------------------------------
-     5. SCROLL SPY — highlight the active nav link
+     5. SCROLL SPY — highlight active nav link
      --------------------------------------------------------- */
   var sections = document.querySelectorAll('main section[id]');
   var navAnchors = navLinks.querySelectorAll('a');
@@ -2359,12 +2374,36 @@ Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), fu
   }
 
   /* ---------------------------------------------------------
-     6. CONTACT FORM (no backend)
+     6. MINI CHART ANIMATION
+     --------------------------------------------------------- */
+  var dataCards = document.querySelectorAll('.data-card');
+
+  if ('IntersectionObserver' in window && dataCards.length) {
+    var chartObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          chartObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    Array.prototype.forEach.call(dataCards, function (card) {
+      chartObserver.observe(card);
+    });
+  } else {
+    Array.prototype.forEach.call(dataCards, function (card) {
+      card.classList.add('in');
+    });
+  }
+
+  /* ---------------------------------------------------------
+     7. CONTACT FORM (no backend)
      --------------------------------------------------------- */
   var form = document.getElementById('contactForm');
   var note = document.getElementById('formNote');
 
-  if (form) {
+  if (form && note) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -2373,12 +2412,18 @@ Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), fu
       var message = document.getElementById('cf-message').value.trim();
 
       if (!name || !email || !message) {
-        note.textContent = 'Please fill in all fields before sending.';
+        note.textContent = 'Hey — looks like something is missing. Mind filling it all in?';
         note.classList.add('show');
         return;
       }
 
-      note.textContent = 'Thanks! Your message is ready to be sent.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        note.textContent = "That email doesn't look quite right.";
+        note.classList.add('show');
+        return;
+      }
+
+      note.textContent = "Got it! I'll get back to you as soon as I can.";
       note.classList.add('show');
       form.reset();
 
