@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fatma El-Sayed — Student, Designer, #30</title>
+<title>Fatma El-Sayed — Student, Data Analyst, #30</title>
 
 <!-- ===== SEO ===== -->
-<meta name="description" content="Fatma El-Sayed — high school student into data, design, and basketball. Jersey #30. This is where all of it lives.">
-<meta name="keywords" content="Fatma El-Sayed, student portfolio, data analysis, graphic design, basketball, jersey 30, Cairo">
+<meta name="description" content="Fatma El-Sayed — high school student into data analysis, design, and basketball. Jersey #30. This is where all of it lives.">
+<meta name="keywords" content="Fatma El-Sayed, student portfolio, data analysis, Power BI, dashboard, basketball, jersey 30, Cairo">
 <meta name="author" content="Fatma El-Sayed">
 <meta name="theme-color" content="#0d0e11">
 
 <!-- ===== Open Graph ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fatma El-Sayed — Student, Designer, #30">
+<meta property="og:title" content="Fatma El-Sayed — Student, Data Analyst, #30">
 <meta property="og:description" content="Numbers. Colors. Court. That's basically my whole personality.">
 <meta property="og:image" content="img.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fatma El-Sayed — Student, Designer, #30">
+<meta name="twitter:title" content="Fatma El-Sayed — Student, Data Analyst, #30">
 <meta name="twitter:description" content="Numbers. Colors. Court.">
 <meta name="twitter:image" content="img.jpg">
 
@@ -1051,52 +1051,50 @@ img.is-missing{ display:none !important; }
 .data-card .btn{ align-self:flex-start; }
 
 /* =========================================================
-   11. DESIGN GALLERY
+   11. DATA PROJECTS SECTION
    ========================================================= */
-.design-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-}
-
-.design-card{
+.project-card{
   position:relative;
+  display:flex;
+  flex-direction:column;
   border-radius:var(--radius);
   background:var(--surface);
   border:1px solid var(--line);
   overflow:hidden;
   transition:transform .4s var(--ease), border-color .4s ease, box-shadow .4s ease;
 }
-.design-card:hover{
+.project-card:hover{
   transform:translateY(-8px);
   border-color:rgba(255,106,43,.30);
   box-shadow:var(--shadow-sm);
 }
 
-.thumb{
+.project-media{
   position:relative;
-  aspect-ratio:4/3;
+  width:100%;
+  aspect-ratio:16/9;
   overflow:hidden;
   background:linear-gradient(150deg,#232833,#171a20);
+  border-bottom:1px solid var(--line);
 }
-.thumb img{
+.project-media img{
   width:100%; height:100%;
   object-fit:cover;
   transition:transform .8s var(--ease), filter .5s ease;
 }
-.design-card:hover .thumb img{
-  transform:scale(1.07);
+.project-card:hover .project-media img{
+  transform:scale(1.05);
   filter:brightness(1.06);
 }
-.thumb::after{
+.project-media::after{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(13,14,17,0) 45%,rgba(13,14,17,.65) 100%);
+  background:linear-gradient(180deg,rgba(13,14,17,0) 50%,rgba(13,14,17,.65) 100%);
   pointer-events:none;
 }
 
-.thumb-fallback{
+.project-fallback{
   position:absolute;
   inset:0;
   display:none;
@@ -1105,8 +1103,8 @@ img.is-missing{ display:none !important; }
     radial-gradient(circle at 50% 30%,rgba(255,106,43,.14),transparent 66%),
     linear-gradient(150deg,#232833,#171a20);
 }
-.thumb.img-failed .thumb-fallback{ display:grid; }
-.thumb-fallback span{
+.project-media.img-failed .project-fallback{ display:grid; }
+.project-fallback span{
   font-family:var(--font-head);
   font-size:.78rem;
   letter-spacing:.28em;
@@ -1114,7 +1112,7 @@ img.is-missing{ display:none !important; }
   color:rgba(255,255,255,.35);
 }
 
-.thumb-tag{
+.project-tag{
   position:absolute;
   left:14px; bottom:14px;
   z-index:2;
@@ -1131,16 +1129,229 @@ img.is-missing{ display:none !important; }
   color:var(--white);
 }
 
-.design-info{ padding:22px 22px 26px; }
-.design-info h3{ font-size:1.02rem; }
-.design-info p{
-  margin-top:8px;
-  font-size:.85rem;
+.project-body{
+  padding:24px 24px 28px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.project-body h3{
+  font-size:1.12rem;
+  line-height:1.3;
+}
+.project-body .project-desc{
+  margin-top:10px;
+  font-size:.88rem;
   color:var(--muted);
+  line-height:1.65;
+}
+
+.project-focus{
+  margin-top:18px;
+  display:grid;
+  gap:8px;
+}
+.project-focus li{
+  position:relative;
+  padding-left:20px;
+  font-size:.84rem;
+  color:var(--text);
+  line-height:1.55;
+}
+.project-focus li::before{
+  content:'';
+  position:absolute;
+  left:0; top:.6em;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+.project-insight{
+  margin-top:18px;
+  padding:14px 16px;
+  border-radius:12px;
+  background:rgba(255,106,43,.07);
+  border-left:3px solid var(--orange);
+  font-size:.84rem;
+  color:var(--text);
+  line-height:1.6;
+}
+.project-insight strong{
+  color:var(--orange);
+  font-weight:600;
+}
+
+.project-tools{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.project-tools li{
+  padding:6px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  font-size:.74rem;
+  color:var(--muted);
+  letter-spacing:.03em;
+}
+
+.project-gallery{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.project-gallery figure{
+  margin:0;
+  aspect-ratio:1;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(150deg,#232833,#171a20);
+  position:relative;
+}
+.project-gallery img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.project-gallery figure:hover img{ transform:scale(1.08); }
+
+.gallery-fallback{
+  position:absolute;
+  inset:0;
+  display:none;
+  place-items:center;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(255,106,43,.12),transparent 66%),
+    linear-gradient(150deg,#232833,#171a20);
+}
+.project-gallery figure.img-failed .gallery-fallback{ display:grid; }
+.gallery-fallback span{
+  font-family:var(--font-head);
+  font-size:.62rem;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.30);
 }
 
 /* =========================================================
-   12. TIMELINE
+   12. CERTIFICATES SECTION
+   ========================================================= */
+.cert-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(32px,5vw,56px);
+  align-items:start;
+}
+
+.cert-preview{
+  position:relative;
+  aspect-ratio:4/3;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:linear-gradient(150deg,#232833,#171a20);
+  border:1px solid var(--line-strong);
+  box-shadow:var(--shadow);
+}
+.cert-preview img{
+  width:100%; height:100%;
+  object-fit:contain;
+  background:#0f1116;
+  padding:10px;
+  transition:transform .7s var(--ease);
+}
+.cert-preview:hover img{ transform:scale(1.02); }
+
+.cert-fallback{
+  position:absolute;
+  inset:0;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+  padding:24px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(255,106,43,.16),transparent 68%),
+    linear-gradient(150deg,#232833,#171a20);
+}
+.cert-preview.img-failed .cert-fallback{ display:flex; }
+.cert-fallback .cert-badge{
+  width:64px; height:64px;
+  display:grid; place-items:center;
+  border-radius:20px;
+  background:rgba(255,106,43,.12);
+  border:1px solid rgba(255,106,43,.30);
+  color:var(--orange);
+}
+.cert-fallback .cert-badge svg{ width:30px; height:30px; }
+.cert-fallback strong{
+  font-family:var(--font-head);
+  font-size:1rem;
+  color:var(--white);
+}
+.cert-fallback span{
+  font-size:.78rem;
+  color:var(--muted-soft);
+  letter-spacing:.05em;
+}
+
+.cert-copy h3{
+  font-size:clamp(1.3rem,3.5vw,1.6rem);
+}
+.cert-copy .cert-issuer{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+  padding:7px 16px;
+  border-radius:999px;
+  background:rgba(255,106,43,.10);
+  border:1px solid rgba(255,106,43,.25);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--orange);
+}
+.cert-copy p{
+  margin-top:20px;
+  font-size:.95rem;
+  color:var(--muted);
+  line-height:1.75;
+  max-width:60ch;
+}
+.cert-highlights{
+  margin-top:26px;
+  display:grid;
+  gap:12px;
+}
+.cert-highlights li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:.88rem;
+  color:var(--text);
+  line-height:1.6;
+}
+.cert-highlights .check{
+  flex:none;
+  width:22px; height:22px;
+  margin-top:1px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background:rgba(255,106,43,.14);
+  color:var(--orange);
+}
+.cert-highlights .check svg{ width:12px; height:12px; }
+
+/* =========================================================
+   13. TIMELINE
    ========================================================= */
 .timeline{
   position:relative;
@@ -1196,7 +1407,7 @@ img.is-missing{ display:none !important; }
 }
 
 /* =========================================================
-   13. VALUES
+   14. VALUES
    ========================================================= */
 .values-grid{
   display:grid;
@@ -1237,7 +1448,7 @@ img.is-missing{ display:none !important; }
 }
 
 /* =========================================================
-   14. CONTACT
+   15. CONTACT
    ========================================================= */
 .contact{
   position:relative;
@@ -1354,7 +1565,7 @@ img.is-missing{ display:none !important; }
 .form-note.show{ opacity:1; transform:none; }
 
 /* =========================================================
-   15. FOOTER
+   16. FOOTER
    ========================================================= */
 .footer{
   background:var(--bg);
@@ -1423,7 +1634,7 @@ img.is-missing{ display:none !important; }
 .to-top:hover{ color:var(--orange); }
 
 /* =========================================================
-   16. SCROLL ANIMATIONS
+   17. SCROLL ANIMATIONS
    ========================================================= */
 .reveal{
   opacity:0;
@@ -1438,7 +1649,7 @@ img.is-missing{ display:none !important; }
 .reveal.d4{ transition-delay:.32s; }
 
 /* =========================================================
-   17. RESPONSIVE
+   18. RESPONSIVE
    ========================================================= */
 @media (max-width:1080px){
   .nav-links a{ padding:9px 12px; font-size:.84rem; }
@@ -1447,7 +1658,8 @@ img.is-missing{ display:none !important; }
 @media (max-width:980px){
   .hero-grid,
   .about-grid,
-  .contact-grid{
+  .contact-grid,
+  .cert-grid{
     grid-template-columns:1fr;
   }
   .hero-visual{ order:2; }
@@ -1531,7 +1743,8 @@ img.is-missing{ display:none !important; }
 
   .skill-card,
   .data-card,
-  .value-card{ padding:24px 20px; }
+  .value-card,
+  .project-body{ padding:24px 20px; }
 
   .jersey-card{ padding:34px 18px; min-height:340px; }
 
@@ -1540,11 +1753,14 @@ img.is-missing{ display:none !important; }
   .timeline::before{ left:8px; }
 
   .contact-form{ padding:22px 18px; }
+
+  .project-gallery{ grid-template-columns:repeat(3,1fr); gap:8px; }
 }
 
 @media (max-width:340px){
   .brand-name{ display:none; }
   .hero h1{ font-size:2.1rem; }
+  .project-gallery{ grid-template-columns:repeat(2,1fr); }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -1579,7 +1795,8 @@ img.is-missing{ display:none !important; }
       <a href="#skills">Skills</a>
       <a href="#basketball">Basketball</a>
       <a href="#data">Data</a>
-      <a href="#design">Design</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
       <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -1608,23 +1825,23 @@ img.is-missing{ display:none !important; }
         <h1 class="reveal d1">Fatma <span class="last">El-Sayed</span></h1>
 
         <p class="hero-headline reveal d2">
-          Numbers<span class="sep">.</span> Colors<span class="sep">.</span> Court<span class="sep">.</span>
+          Numbers<span class="sep">.</span> Insights<span class="sep">.</span> Court<span class="sep">.</span>
         </p>
 
         <p class="hero-lead reveal d3">
           I'm 16, I spend way too much time on spreadsheets nobody asked for,
-          I redesign things in my head while walking down the street,
+          I turn messy data into dashboards that actually make sense,
           and I shoot hoops every chance I get. This is where all of that lives.
         </p>
 
         <div class="hero-cta reveal d3">
           <a href="#about" class="btn btn-primary">Start Here</a>
-          <a href="#design" class="btn btn-ghost">See My Work</a>
+          <a href="#projects" class="btn btn-ghost">See My Projects</a>
         </div>
 
         <div class="hero-tags reveal d4">
-          <span>Data</span>
-          <span>Design</span>
+          <span>Data Analysis</span>
+          <span>Power BI</span>
           <span>Basketball</span>
         </div>
       </div>
@@ -1672,8 +1889,8 @@ img.is-missing{ display:none !important; }
         <p>
           Honestly? I didn't plan any of this. I just started noticing that whenever
           a teacher handed out a table of numbers, I'd get weirdly excited to poke
-          around and see what was hiding inside it. And whenever I saw a poster
-          that looked off, I couldn't stop thinking about how I'd fix it.
+          around and see what was hiding inside it. And whenever I saw a dashboard
+          that looked messy, I couldn't stop thinking about how I'd fix it.
         </p>
         <p>
           Then there's basketball — the part of my day where I stop overthinking
@@ -1692,19 +1909,20 @@ img.is-missing{ display:none !important; }
               </svg>
             </span>
             <span>
-              <strong>Data</strong>
+              <strong>Data Analysis</strong>
               <span>I like the moment a boring spreadsheet suddenly starts telling a story.</span>
             </span>
           </li>
           <li>
             <span class="ai" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 20l4-1L18 9l-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/>
+                <path d="M4 19V5"/><path d="M4 19h16"/>
+                <path d="M8 16l3.5-4.5L15 14l4-6"/>
               </svg>
             </span>
             <span>
-              <strong>Design</strong>
-              <span>Spacing, color, and fonts — I'll spend an hour on 2 pixels and be happy about it.</span>
+              <strong>Dashboards</strong>
+              <span>Building Power BI dashboards that turn raw numbers into decisions.</span>
             </span>
           </li>
           <li>
@@ -1727,13 +1945,13 @@ img.is-missing{ display:none !important; }
           <div class="profile-avatar" aria-hidden="true">FE</div>
           <div>
             <h3>Fatma El-Sayed</h3>
-            <p>Student • Designer • Baller</p>
+            <p>Student • Data Analyst • Baller</p>
           </div>
         </div>
 
         <ul class="profile-roles">
-          <li><span class="dot" aria-hidden="true"></span> Currently learning: data analysis</li>
-          <li><span class="dot" aria-hidden="true"></span> Currently designing: whatever I can</li>
+          <li><span class="dot" aria-hidden="true"></span> Currently learning: Power BI & DAX</li>
+          <li><span class="dot" aria-hidden="true"></span> Currently building: data dashboards</li>
           <li><span class="dot" aria-hidden="true"></span> Currently wearing: jersey #30</li>
         </ul>
 
@@ -1777,10 +1995,10 @@ img.is-missing{ display:none !important; }
             what the numbers are actually trying to say.
           </p>
           <ul class="chips">
-            <li>Cleaning Data</li>
-            <li>Charts &amp; Graphs</li>
-            <li>Spotting Patterns</li>
-            <li>Excel</li>
+            <li>Data Cleaning</li>
+            <li>Exploratory Analysis</li>
+            <li>KPI Tracking</li>
+            <li>Insight Storytelling</li>
             <li>Asking Better Questions</li>
           </ul>
         </article>
@@ -1788,20 +2006,21 @@ img.is-missing{ display:none !important; }
         <article class="skill-card reveal d1">
           <div class="skill-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 20l4-1L18 9l-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/>
+              <rect x="3" y="4" width="18" height="14" rx="2"/>
+              <path d="M7 9h10M7 13h6"/>
             </svg>
           </div>
-          <h3>Graphic Design</h3>
+          <h3>Power BI & DAX</h3>
           <p class="skill-desc">
-            Making things that look clean and actually make sense. Social posts,
-            posters, small brand stuff — I'll try my hand at any of it.
+            Building interactive dashboards — from KPIs and slicers to maps and
+            custom DAX measures that actually answer a question.
           </p>
           <ul class="chips">
-            <li>Layout</li>
-            <li>Social Media Posts</li>
-            <li>Typography</li>
-            <li>Color</li>
-            <li>Not Overdoing It</li>
+            <li>Power BI</li>
+            <li>DAX</li>
+            <li>Power Query</li>
+            <li>Dashboards</li>
+            <li>Data Modeling</li>
           </ul>
         </article>
 
@@ -1931,7 +2150,7 @@ img.is-missing{ display:none !important; }
             <span style="--h:86%;--d:.26s"></span>
             <span style="--h:72%;--d:.33s"></span>
           </div>
-          <a href="#contact" class="btn btn-outline btn-sm">Ask me about it</a>
+          <a href="#projects" class="btn btn-outline btn-sm">See projects</a>
         </article>
 
         <article class="data-card reveal d1">
@@ -1949,7 +2168,7 @@ img.is-missing{ display:none !important; }
             <span style="--h:46%;--d:.26s"></span>
             <span style="--h:64%;--d:.33s"></span>
           </div>
-          <a href="#contact" class="btn btn-outline btn-sm">Ask me about it</a>
+          <a href="#projects" class="btn btn-outline btn-sm">See projects</a>
         </article>
 
         <article class="data-card reveal d2">
@@ -1968,7 +2187,7 @@ img.is-missing{ display:none !important; }
             <span style="--h:60%;--d:.26s"></span>
             <span style="--h:92%;--d:.33s"></span>
           </div>
-          <a href="#contact" class="btn btn-outline btn-sm">Ask me about it</a>
+          <a href="#projects" class="btn btn-outline btn-sm">See projects</a>
         </article>
 
       </div>
@@ -1976,69 +2195,223 @@ img.is-missing{ display:none !important; }
   </section>
 
   <!-- =========================================================
-       DESIGN
+       DATA PROJECTS
        ========================================================= -->
-  <section class="section" id="design">
+  <section class="section" id="projects">
     <div class="container">
 
       <div class="section-head reveal">
-        <span class="section-kicker">Design</span>
-        <h2 class="section-title">Stuff I Made (and stuff I'm still fixing)</h2>
+        <span class="section-kicker">Projects</span>
+        <h2 class="section-title">Real Dashboards, Real Data</h2>
         <p class="section-sub">
-          These are personal projects and small experiments. Nothing fancy —
-          just things I made because I wanted to see if I could.
+          Personal data analysis projects built with Power BI, DAX, and Power Query.
+          Each one started with a messy dataset and a question I actually wanted answered.
         </p>
       </div>
 
-      <div class="design-grid">
+      <div class="cards-3">
 
-        <article class="design-card reveal">
-          <div class="thumb">
-            <img src="images/design-1.jpg" alt="Social media design series by Fatma El-Sayed" loading="lazy" data-fallback>
-            <div class="thumb-fallback" aria-hidden="true"><span>Design 01</span></div>
-            <span class="thumb-tag">Social Media</span>
+        <!-- Project 1: Fraud & Risk Dashboard -->
+        <article class="project-card reveal">
+          <div class="project-media">
+            <img src="P1.jpg" alt="Bank Transaction Fraud & Risk Dashboard in Power BI" loading="lazy" data-fallback>
+            <div class="project-fallback" aria-hidden="true"><span>Project Preview</span></div>
+            <span class="project-tag">DataDNA Challenge</span>
           </div>
-          <div class="design-info">
-            <h3>A Week of Posts</h3>
-            <p>I challenged myself to make one post a day for a week. Some were great, some were not. I learned more from the bad ones.</p>
+          <div class="project-body">
+            <h3>Bank Transaction Fraud &amp; Risk Dashboard</h3>
+            <p class="project-desc">
+              Turning raw banking data into actionable fraud intelligence using Power BI.
+              Built an interactive Bank Transaction Fraud &amp; Risk Dashboard as a
+              DataDNA Challenge submission.
+            </p>
+            <ul class="project-focus">
+              <li>KPI tracking (Transactions, Amount, Fraud Rate, Fraud Exposure)</li>
+              <li>Transaction trend analysis over time</li>
+              <li>Fraud vs Non-Fraud comparison</li>
+              <li>Transaction status breakdown</li>
+              <li>Fraud risk analysis by category and region (Map)</li>
+              <li>Interactive slicers (Date, Category, Fraud Flag)</li>
+            </ul>
+            <div class="project-insight">
+              <strong>Key Insight:</strong> Fraud risk is concentrated in specific categories and regions,
+              and financial exposure is a more critical metric than fraud count alone.
+            </div>
+            <ul class="project-tools">
+              <li>Power BI</li>
+              <li>DAX</li>
+              <li>Data Visualization</li>
+            </ul>
           </div>
         </article>
 
-        <article class="design-card reveal d1">
-          <div class="thumb">
-            <img src="images/design-2.jpg" alt="Brand identity study by Fatma El-Sayed" loading="lazy" data-fallback>
-            <div class="thumb-fallback" aria-hidden="true"><span>Design 02</span></div>
-            <span class="thumb-tag">Identity</span>
+        <!-- Project 2: Retail Sales Dashboard -->
+        <article class="project-card reveal d1">
+          <div class="project-media">
+            <img src="p2-1.jpg" alt="Retail Sales Analysis Dashboard in Power BI" loading="lazy" data-fallback>
+            <div class="project-fallback" aria-hidden="true"><span>Project Preview</span></div>
+            <span class="project-tag">Retail Analytics</span>
           </div>
-          <div class="design-info">
-            <h3>Fake Brand Practice</h3>
-            <p>I invented a coffee shop, gave it a name, and built a whole tiny brand around it. Just for fun.</p>
+          <div class="project-body">
+            <h3>Retail Sales Analysis Dashboard</h3>
+            <p class="project-desc">
+              A professional Power BI dashboard for retail sales analysis — built with a
+              clean, modern layout and a dark blue &amp; white theme, focused on insights
+              and storytelling.
+            </p>
+            <ul class="project-focus">
+              <li>KPIs: Total Sales, Orders, Customers, Average Order Value</li>
+              <li>Sales trends over time</li>
+              <li>Top products and categories</li>
+              <li>Customer analysis (new vs returning, top customers)</li>
+              <li>Sales by region (map or chart)</li>
+              <li>Interactive slicers (Date, Region, Category)</li>
+            </ul>
+            <ul class="project-tools">
+              <li>Power BI</li>
+              <li>DAX</li>
+              <li>Data Modeling</li>
+            </ul>
+
+            <div class="project-gallery">
+              <figure>
+                <img src="p2-1.jpg" alt="Retail dashboard — overview" loading="lazy" data-fallback>
+                <div class="gallery-fallback" aria-hidden="true"><span>01</span></div>
+              </figure>
+              <figure>
+                <img src="P2-2.jpg" alt="Retail dashboard — customer analysis" loading="lazy" data-fallback>
+                <div class="gallery-fallback" aria-hidden="true"><span>02</span></div>
+              </figure>
+              <figure>
+                <img src="P2-3.jpg" alt="Retail dashboard — regional sales" loading="lazy" data-fallback>
+                <div class="gallery-fallback" aria-hidden="true"><span>03</span></div>
+              </figure>
+            </div>
           </div>
         </article>
 
-        <article class="design-card reveal d2">
-          <div class="thumb">
-            <img src="images/design-3.jpg" alt="Poster concept by Fatma El-Sayed" loading="lazy" data-fallback>
-            <div class="thumb-fallback" aria-hidden="true"><span>Design 03</span></div>
-            <span class="thumb-tag">Poster</span>
+        <!-- Project 3: Banking Data Analysis Dashboard -->
+        <article class="project-card reveal d2">
+          <div class="project-media">
+            <img src="P3-1.jpg" alt="Banking Data Analysis Dashboard in Power BI" loading="lazy" data-fallback>
+            <div class="project-fallback" aria-hidden="true"><span>Project Preview</span></div>
+            <span class="project-tag">First Project</span>
           </div>
-          <div class="design-info">
-            <h3>School Event Poster</h3>
-            <p>My first real brief. I redid it about six times before I was happy with it. Worth it.</p>
+          <div class="project-body">
+            <h3>Banking Data Analysis Dashboard</h3>
+            <p class="project-desc">
+              My first data analysis project — an interactive Banking Data Analysis
+              Dashboard built with Power BI to analyze financial data and uncover
+              meaningful insights.
+            </p>
+            <ul class="project-focus">
+              <li>Data cleaning and transformation using Power Query</li>
+              <li>Building interactive dashboards</li>
+              <li>Creating KPIs and visual reports</li>
+              <li>Analyzing customer and transaction trends</li>
+            </ul>
+            <div class="project-insight">
+              <strong>Tools used:</strong> Power BI | Power Query | DAX | Excel
+            </div>
+            <ul class="project-tools">
+              <li>Power BI</li>
+              <li>Power Query</li>
+              <li>DAX</li>
+              <li>Excel</li>
+            </ul>
+
+            <div class="project-gallery">
+              <figure>
+                <img src="P3-2.jpg" alt="Banking dashboard — overview" loading="lazy" data-fallback>
+                <div class="gallery-fallback" aria-hidden="true"><span>01</span></div>
+              </figure>
+              <figure>
+                <img src="P3-1.jpg" alt="Banking dashboard — customer trends" loading="lazy" data-fallback>
+                <div class="gallery-fallback" aria-hidden="true"><span>02</span></div>
+              </figure>
+              <figure>
+                <img src="P3-3.jpg" alt="Banking dashboard — transaction analysis" loading="lazy" data-fallback>
+                <div class="gallery-fallback" aria-hidden="true"><span>03</span></div>
+              </figure>
+            </div>
           </div>
         </article>
 
-        <article class="design-card reveal d3">
-          <div class="thumb">
-            <img src="images/design-4.jpg" alt="Creative design experiment by Fatma El-Sayed" loading="lazy" data-fallback>
-            <div class="thumb-fallback" aria-hidden="true"><span>Design 04</span></div>
-            <span class="thumb-tag">Experiment</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CERTIFICATES
+       ========================================================= -->
+  <section class="section section--alt" id="certificates">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="section-kicker">Certificates</span>
+        <h2 class="section-title">Learning That Actually Stuck</h2>
+        <p class="section-sub">
+          Courses and programs I've completed on my data journey — because the best
+          way to learn is to keep learning.
+        </p>
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-preview reveal" aria-label="Onyx certificate preview">
+          <img src="SER.jpg" alt="Onyx Certificate — Fatma El-Sayed" loading="lazy" data-fallback>
+          <div class="cert-fallback" aria-hidden="true">
+            <span class="cert-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="9" r="5"/>
+                <path d="M8.5 13.2L7 21l5-2.5L17 21l-1.5-7.8"/>
+              </svg>
+            </span>
+            <strong>Certificate Preview</strong>
+            <span>ضع صورة الشهادة هنا: images/certificate-onyx.jpg</span>
           </div>
-          <div class="design-info">
-            <h3>Colors I Liked This Month</h3>
-            <p>An excuse to play with palettes. No client, no deadline, just me and the color wheel.</p>
-          </div>
-        </article>
+        </div>
+
+        <div class="cert-copy reveal d1">
+          <h3>Onyx Certificate</h3>
+          <span class="cert-issuer">Certified by Onyx</span>
+          <p>
+            Excited to share that I have successfully earned my certificate from Onyx!
+            This experience helped me develop my skills, gain valuable knowledge, and
+            take another step forward in my learning journey.
+          </p>
+          <p>
+            I'm grateful for the opportunity and looking forward to applying what
+            I've learned in future projects.
+          </p>
+
+          <ul class="cert-highlights">
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12l5 5L20 6"/>
+                </svg>
+              </span>
+              Completed the full Onyx program successfully
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12l5 5L20 6"/>
+                </svg>
+              </span>
+              Developed practical skills and gained valuable knowledge
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12l5 5L20 6"/>
+                </svg>
+              </span>
+              Ready to apply what I've learned in future projects
+            </li>
+          </ul>
+        </div>
 
       </div>
     </div>
@@ -2047,7 +2420,7 @@ img.is-missing{ display:none !important; }
   <!-- =========================================================
        JOURNEY
        ========================================================= -->
-  <section class="section section--alt" id="journey">
+  <section class="section" id="journey">
     <div class="container">
 
       <div class="section-head reveal">
@@ -2077,8 +2450,8 @@ img.is-missing{ display:none !important; }
         <li class="timeline-item reveal d2">
           <span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-card">
-            <h3>Found Design</h3>
-            <p>Started making things for myself. Showed my friends. They said "wait, you made this?" That felt good.</p>
+            <h3>Built My First Dashboard</h3>
+            <p>Banking Data Analysis Dashboard — my first real Power BI project. Everything clicked after that.</p>
           </div>
         </li>
 
@@ -2097,7 +2470,7 @@ img.is-missing{ display:none !important; }
   <!-- =========================================================
        VALUES
        ========================================================= -->
-  <section class="section" id="values">
+  <section class="section section--alt" id="values">
     <div class="container">
 
       <div class="section-head center reveal">
@@ -2116,7 +2489,7 @@ img.is-missing{ display:none !important; }
         <article class="value-card reveal d1">
           <span class="value-num" aria-hidden="true">02</span>
           <h3>Make It Clear</h3>
-          <p>A design or a chart that confuses people isn't finished yet.</p>
+          <p>A dashboard or a chart that confuses people isn't finished yet.</p>
         </article>
 
         <article class="value-card reveal d2">
@@ -2209,7 +2582,7 @@ img.is-missing{ display:none !important; }
         <span class="brand-mark" aria-hidden="true">30</span>
         <div>
           <p class="footer-name">Fatma El-Sayed</p>
-          <p class="footer-tag">Data • Design • Basketball</p>
+          <p class="footer-tag">Data • Dashboards • Basketball</p>
         </div>
       </div>
 
@@ -2217,8 +2590,8 @@ img.is-missing{ display:none !important; }
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#basketball">Basketball</a>
-        <a href="#data">Data</a>
-        <a href="#design">Design</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -2324,13 +2697,21 @@ img.is-missing{ display:none !important; }
 
     function showFallback() {
       img.classList.add('is-missing');
-      var frame = img.closest('.photo-frame') || img.closest('.thumb');
+      var frame = img.closest('.photo-frame')
+               || img.closest('.thumb')
+               || img.closest('.project-media')
+               || img.closest('.project-gallery figure')
+               || img.closest('.cert-preview');
       if (frame) frame.classList.add('img-failed');
     }
 
     function hideFallback() {
       img.classList.remove('is-missing');
-      var frame = img.closest('.photo-frame') || img.closest('.thumb');
+      var frame = img.closest('.photo-frame')
+               || img.closest('.thumb')
+               || img.closest('.project-media')
+               || img.closest('.project-gallery figure')
+               || img.closest('.cert-preview');
       if (frame) frame.classList.remove('img-failed');
     }
 
